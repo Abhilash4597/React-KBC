@@ -1,5 +1,7 @@
 
-export default function Quiz() {
+export default function Quiz({data , setimeOut , setQuestionNum , questionNum}) {
+
+    
   return (
     <div className="quiz">
         <div className="questions">What is your Name?</div>
