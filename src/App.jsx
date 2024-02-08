@@ -1,76 +1,40 @@
+import { useState } from 'react';
 import './App.css'
 
 function App() {
+
+  const [questionNum, setQuestionNum] = useState(1);
+
+  const moneyPyramid = [
+    { 'id': 1 , 'amount': "1000" },
+    { 'id': 2 , 'amount': "2000" },
+    { 'id': 3 , 'amount': "3000" },
+    { 'id': 4 , 'amount': "5000" },
+    { 'id': 5 , 'amount': "10000" },
+    { 'id': 6 , 'amount': "20000" },
+    { 'id': 7 , 'amount': "40000" },
+    { 'id': 8 , 'amount': "80000" },
+    { 'id': 9 , 'amount': "160000" },
+    { 'id': 10 , 'amount': "320000" },
+    { 'id': 11 , 'amount': "640000" },
+    { 'id': 12 , 'amount': "1250000" },
+    { 'id': 13 , 'amount': "2500000" },
+    { 'id': 14 , 'amount': "5000000" },
+    { 'id': 15 , 'amount': "10000000" },
+    { 'id': 16 , 'amount': "70000000" },
+  ].reverse();
 
   return (
     <div className='app'>
       <div className='main'>Main</div>
       <div className='money'>
         <ul className='money_list'>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>16</span>
-            <span className='money_list_item_amount'>70000000</span>
+        {moneyPyramid.map((item, id)=>{
+          return <li className={questionNum === item.id ? 'money_list_item active' : 'money_list_item'} key={id}>
+            <span className='money_list_item_number'>{item.id}</span>
+            <span className='money_list_item_amount'>{item.amount}</span>
           </li>
-          <li className='money_list_item active'>
-            <span className='money_list_item_number'>15</span>
-            <span className='money_list_item_amount'>10000000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>14</span>
-            <span className='money_list_item_amount'>5000000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>13</span>
-            <span className='money_list_item_amount'>2500000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>12</span>
-            <span className='money_list_item_amount'>1250000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>11</span>
-            <span className='money_list_item_amount'>640000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>10</span>
-            <span className='money_list_item_amount'>320000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>9</span>
-            <span className='money_list_item_amount'>160000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>8</span>
-            <span className='money_list_item_amount'>80000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>7</span>
-            <span className='money_list_item_amount'>40000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>6</span>
-            <span className='money_list_item_amount'>20000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>5</span>
-            <span className='money_list_item_amount'>10000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>4</span>
-            <span className='money_list_item_amount'>5000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>3</span>
-            <span className='money_list_item_amount'>3000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>2</span>
-            <span className='money_list_item_amount'>2000</span>
-          </li>
-          <li className='money_list_item'>
-            <span className='money_list_item_number'>1</span>
-            <span className='money_list_item_amount'>1000</span>
-          </li>
+        })}
         </ul>
       </div>
     </div>
