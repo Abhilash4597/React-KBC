@@ -8,7 +8,7 @@ function App() {
   const [questionNum, setQuestionNum] = useState(1);
   const [timeOut, setimeOut] = useState(false);
 
-  // console.log(data[0])
+  console.log(data[0].question)
 
   const moneyPyramid = [
     { 'id': 1 , 'amount': "1000" },
