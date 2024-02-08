@@ -15,4 +15,29 @@
 
 .money {
     width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.money_list_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2px 15px;
+}
+
+.money_list_item.active {
+    background-color: teal;
+}
+
+.money_list_item_number {
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.money_list_item_amount {
+    font-size: 20px;
+    font-weight: 300;
 }
