@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css'
+import Quiz from './Components/Quiz';
 
 function App() {
 
@@ -26,7 +27,16 @@ function App() {
 
   return (
     <div className='app'>
-      <div className='main'>Main</div>
+      <div className='main'>
+        <div className='top'>
+          <div className='timer'>30</div>
+        </div>
+        <div className='bottom'>
+          <Quiz />
+        </div>
+      </div>
+
+
       <div className='money'>
         <ul className='money_list'>
         {moneyPyramid.map((item, id)=>{
