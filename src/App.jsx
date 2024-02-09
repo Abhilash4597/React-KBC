@@ -6,7 +6,7 @@ import data from './Data/data.json'
 function App() {
 
   const [questionNum, setQuestionNum] = useState(1);
-  const [timeOut, setimeOut] = useState(false);
+  const [timeout, setimeout] = useState(false);
 
   // console.log(data[0].question)
 
@@ -36,7 +36,7 @@ function App() {
           <div className='timer'>30</div>
         </div>
         <div className='bottom'>
-          <Quiz data={data} setimeOut={setimeOut} setQuestionNum={setQuestionNum} questionNum={setQuestionNum} />
+          <Quiz data={data} setimeout={setimeout} setQuestionNum={setQuestionNum} questionNum={setQuestionNum} />
         </div>
       </div>
 

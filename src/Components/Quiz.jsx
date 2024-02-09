@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 
-export default function Quiz({ data, setimeOut, setQuestionNum, questionNum }) {
+export default function Quiz({ data, setimeout, setQuestionNum, questionNum }) {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [className, setClassName] = useState(null);
@@ -13,10 +13,14 @@ export default function Quiz({ data, setimeOut, setQuestionNum, questionNum }) {
     setQuestion(randomQuestion);
   }, [data, questionNum]);
 
-  const handleClick = (option) => {
+  const handleClick = (question, option) => {
     setSelectedAnswer(option.option);
     setClassName("answer active");
-    console.log(option.option);
+    setimeout(() => {
+      setClassName(
+        question.answer === option.option ? "answer correct" : "answer wrong"
+      );
+    }, 3000);
   };
 
   return (
@@ -28,8 +32,10 @@ export default function Quiz({ data, setimeOut, setQuestionNum, questionNum }) {
             {question.options.map((option, id) => (
               <div
                 key={id}
-                className={selectedAnswer===option.option ? className:'answer'}
-                onClick={() => handleClick(option)}>
+                className={
+                  selectedAnswer === option.option ? className : "answer"
+                }
+                onClick={() => handleClick(question, option)}>
                 {option.option}
               </div>
             ))}
