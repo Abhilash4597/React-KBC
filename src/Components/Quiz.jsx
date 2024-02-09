@@ -2,12 +2,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 
-export default function Quiz({
-  data,
-  setTimeOut,
-  setQuestionNum,
-  questionNum,
-}) {
+export default function Quiz({ data, setStop, setQuestionNum, questionNum }) {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [className, setClassName] = useState(null);
