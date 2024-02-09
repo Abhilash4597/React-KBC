@@ -2,7 +2,12 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 
-export default function Quiz({ data, setimeout, setQuestionNum, questionNum }) {
+export default function Quiz({
+  data,
+  setTimeOut,
+  setQuestionNum,
+  questionNum,
+}) {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [className, setClassName] = useState(null);
@@ -16,7 +21,7 @@ export default function Quiz({ data, setimeout, setQuestionNum, questionNum }) {
   const handleClick = (question, option) => {
     setSelectedAnswer(option.option);
     setClassName("answer active");
-    setimeout(() => {
+    setTimeout(() => {
       setClassName(
         question.answer === option.option ? "answer correct" : "answer wrong"
       );

@@ -6,7 +6,7 @@ import data from './Data/data.json'
 function App() {
 
   const [questionNum, setQuestionNum] = useState(1);
-  const [timeout, setimeout] = useState(false);
+  const [timeOut, setTimeOut] = useState(false);
 
   // console.log(data[0].question)
 
@@ -30,29 +30,41 @@ function App() {
   ].reverse();
 
   return (
-    <div className='app'>
-      <div className='main'>
-        <div className='top'>
-          <div className='timer'>30</div>
+    <div className="app">
+      <div className="main">
+        <div className="top">
+          <div className="timer">30</div>
         </div>
-        <div className='bottom'>
-          <Quiz data={data} setimeout={setimeout} setQuestionNum={setQuestionNum} questionNum={setQuestionNum} />
+        <div className="bottom">
+          <Quiz
+            data={data}
+            setimeout={setTimeOut}
+            setQuestionNum={setQuestionNum}
+            questionNum={setQuestionNum}
+          />
         </div>
       </div>
 
-
-      <div className='money'>
-        <ul className='money_list'>
-        {moneyPyramid.map((item, id)=>{
-          return <li className={questionNum === item.id ? 'money_list_item active' : 'money_list_item'} key={id}>
-            <span className='money_list_item_number'>{item.id}</span>
-            <span className='money_list_item_amount'>{item.amount}</span>
-          </li>
-        })}
+      <div className="money">
+        <ul className="money_list">
+          {moneyPyramid.map((item, id) => {
+            return (
+              <li
+                className={
+                  questionNum === item.id
+                    ? "money_list_item active"
+                    : "money_list_item"
+                }
+                key={id}>
+                <span className="money_list_item_number">{item.id}</span>
+                <span className="money_list_item_amount">{item.amount}</span>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
 export default App
