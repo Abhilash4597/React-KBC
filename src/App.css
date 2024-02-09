@@ -36,6 +36,7 @@
     font-size: 20px;
     padding: 20px;
     border-radius: 10px;
+    margin-top: 15px;
 }
 
 .answers {
@@ -43,6 +44,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 25px;
 }
 
 .answer {
