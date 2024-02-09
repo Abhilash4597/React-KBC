@@ -13,14 +13,28 @@ export default function Quiz({ data, setStop, setQuestionNum, questionNum }) {
     setQuestion(randomQuestion);
   }, [data, questionNum]);
 
+  const delay = (duration, callback) => {
+    setTimeout(() => {
+      callback();
+    }, duration);
+  };
+
   const handleClick = (question, option) => {
     setSelectedAnswer(option.option);
     setClassName("answer active");
-    setTimeout(() => {
+    delay(3000, () =>
       setClassName(
         question.answer === option.option ? "answer correct" : "answer wrong"
-      );
-    }, 3000);
+      )
+    );
+    delay(6000, () => {
+      if (question.answer === option.option) {
+        setQuestionNum((prev) => prev + 1);
+        setSelectedAnswer(null);
+      } else {
+        setStop(true);
+      }
+    });
   };
 
   return (

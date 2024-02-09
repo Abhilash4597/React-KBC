@@ -40,7 +40,7 @@ function App() {
             data={data}
             setStop={setStop}
             setQuestionNum={setQuestionNum}
-            questionNum={setQuestionNum}
+            questionNum={questionNum}
           />
         </div>
       </div>
