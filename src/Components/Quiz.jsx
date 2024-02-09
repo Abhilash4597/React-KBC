@@ -27,12 +27,16 @@ export default function Quiz({ data, setStop, setQuestionNum, questionNum }) {
         question.answer === option.option ? "answer correct" : "answer wrong"
       )
     );
-    delay(6000, () => {
+    delay(5000, () => {
       if (question.answer === option.option) {
-        setQuestionNum((prev) => prev + 1);
-        setSelectedAnswer(null);
+        delay(1000, () => {
+          setQuestionNum((prev) => prev + 1);
+          setSelectedAnswer(null);
+        });
       } else {
-        setStop(true);
+        delay(1000, () => {
+          setStop(true);
+        });
       }
     });
   };
