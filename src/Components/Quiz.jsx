@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import correctSound from "../sounds/correct.mp3";
 import playSound from "../sounds/play.mp3";
+// import waitSound from "../sounds/wait.mp3";
 import wrongSound from "../sounds/wrong.mp3";
 import Timer from "./Timer";
 
@@ -20,6 +21,9 @@ export default function Quiz({ data, setStop, setQuestionNum, questionNum }) {
   function wrong() {
     new Audio(wrongSound).play();
   }
+  //   function wait() {
+  //     new Audio(waitSound).play();
+  //   }
 
   useEffect(() => {
     play();
