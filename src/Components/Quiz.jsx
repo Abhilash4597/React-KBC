@@ -1,16 +1,25 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
+// import correctSound from '../sounds/correct.mp3'
+import playSound from "../sounds/play.mp3";
+// import waitSound from '../sounds/wait.mp3'
+// import wrongSound from '../sounds/wrong.mp3'
 
 export default function Quiz({ data, setStop, setQuestionNum, questionNum }) {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [className, setClassName] = useState(null);
 
+  const play = () => {
+    new Audio(playSound).play();
+  };
+
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * data.length);
     const randomQuestion = data[randomIndex];
     setQuestion(randomQuestion);
+    play()
   }, [data, questionNum]);
 
   const delay = (duration, callback) => {
