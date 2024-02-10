@@ -24,6 +24,44 @@
     margin: auto;
 }
 
+
+.start {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.startInput {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.startInput:focus {
+    outline: none;
+}
+
+.startBtn {
+    width: 100%;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    background: linear-gradient(#1e1e61, #321c56);
+    cursor: pointer;
+}
+
 .top {
     height: 50%;
     position: relative;
@@ -116,8 +154,8 @@
     font-size: 30px;
     font-weight: 700;
     position: absolute;
-    left: 80px;
-    bottom: 10px;
+    top: 35%;
+    left: 10%;
 }
 
 .bottom {
